@@ -1,0 +1,17 @@
+You are now connected to database "fancy_coffee" as user "sojeong".
+ type | description 
+------+-------------
+(0 rows)
+
+ type | description 
+------+-------------
+(0 rows)
+
+ coffee_id | drink | description | img_url | calories | taste | option | votes 
+-----------+-------+-------------+---------+----------+-------+--------+-------
+(0 rows)
+
+ comment_id | author | body | votes | coffee_id | created_at 
+------------+--------+------+-------+-----------+------------
+(0 rows)
+

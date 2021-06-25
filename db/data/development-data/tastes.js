@@ -5,7 +5,7 @@ module.exports = [
     },
     {
         type:'strong',
-        description:'It contains a lot Caffeine.'
+        description:'It contains a lot of Caffeine.'
     },
     {
         type:'sweet',
