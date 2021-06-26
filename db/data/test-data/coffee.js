@@ -4,8 +4,8 @@ module.exports = [
         description:'Latte is comprised of a shot of espresso and steamed milk ',
         img_url:'https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80',
         calories:180,
-        taste:'mild',  
-        option:'semi-skimmed-milk',
+        sort:'mild',  
+        preference:'semi-skimmed-milk',
         votes:10
 
     },
@@ -14,37 +14,36 @@ module.exports = [
         description:'Soy Latte is comprised of a shot of espresso and soy steamed milk ',
         img_url:'https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80',
         calories:149,
-        taste:'mild',  
-        option:'soy-milk',
+        sort:'mild',  
+        preference:'soy-milk',
         votes:8
-
     },
     {
         drink:'Oat Latte',
         description:'Oat Latte is comprised of a shot of espresso and oat steamed milk ',
         img_url:'https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80',
         calories:269,
-        taste:'mild',  
-        option:'oat-milk',
+        sort:'mild',  
+        preference:'oat-milk',
         votes:10
-
     },
     {
         drink:'Soy vanilla latte',
         description:'Soy vanilla latte is comprised of a shot of espresso and steamed soy milk with vanilla syrup',
         img_url:'https://images.unsplash.com/photo-1606821466874-1e3eb48c9442?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80',
         calories:222,
-        taste: 'sweet', 
-        option:'soy-milk',
+        sort: 'sweet', 
+        preference:'soy-milk',
         votes:15
+
     },
     {
         drink:'Cappuccino',
         description:'Cappuccino is comprised of a shot of espresso and more foam than steamed milk',
         img_url:'https://images.unsplash.com/photo-1553381006-e9b84d5952c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1334&q=80',
         calories:143,
-        taste:'mild',  
-        option:'cow-milk',
+        sort:'mild',  
+        preference:'cow-milk',
         votes:8
     },
     {
@@ -52,17 +51,17 @@ module.exports = [
         description:'Mocha is comprised of a shot of espresso , steamed milk and chocolate sauce',
         img_url:'https://images.unsplash.com/photo-1569564358029-a3f834632c6a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80',
         calories:283,
-        taste: 'sweet', 
-        option:'semi-skimmed-milk',
+        sort: 'sweet', 
+        preference:'semi-skimmed-milk',
         votes:10
     },
     {
-        drink:' Coconut Mocha',
+        drink:'Coconut Mocha',
         description:'Coconut Mocha is comprised of a shot of espresso , steamed coconut milk and chocolate sauce',
         img_url:'https://images.unsplash.com/photo-1569564358029-a3f834632c6a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80',
         calories:263,
-        taste: 'sweet', 
-        option:'coconut-milk',
+        sort: 'sweet', 
+        preference:'coconut-milk',
         votes:15
     },
     {
@@ -70,8 +69,8 @@ module.exports = [
         description:'Americano is a shot of espresso diluted in hot water',
         img_url:'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
         calories:16,
-        taste: 'strong', 
-        option:'water',
+        sort: 'strong', 
+        preference:'water',
         votes:10
     },
     {
@@ -79,8 +78,8 @@ module.exports = [
         description:'Cortado is a shot of espresso and less steamed milk',
         img_url:'https://images.unsplash.com/photo-1514066558159-fc8c737ef259?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
         calories:72,
-        taste: 'strong',
-        option:'semi-skimmed-milk',
+        sort: 'strong',
+        preference:'semi-skimmed-milk',
         votes: 10
     
     },
@@ -89,8 +88,8 @@ module.exports = [
         description:'Cortado is a shot of espresso and less steamed coconut milk',
         img_url:'https://images.unsplash.com/photo-1514066558159-fc8c737ef259?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
         calories:50,
-        taste: 'strong',
-        option:'coconut-milk',
+        sort: 'strong',
+        preference:'coconut-milk',
         votes: 11
     
     },
@@ -99,8 +98,8 @@ module.exports = [
         description:'Cortado is a shot of espresso and less steamed oat milk',
         img_url:'https://images.unsplash.com/photo-1514066558159-fc8c737ef259?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
         calories:84,
-        taste: 'strong',
-        option:'oat-milk',
+        sort: 'strong',
+        preference:'oat-milk',
         votes: 6
     
     },
@@ -109,8 +108,8 @@ module.exports = [
         description:'Flat white is an espresso drink with steamed milk.',
         img_url:'https://images.unsplash.com/photo-1502462041640-b3d7e50d0662?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80',
         calories:87,
-        taste:'mild',  
-        option:'semi-skimmed-milk',
+        sort:'mild',  
+        preference:'semi-skimmed-milk',
         votes:15
     },
     {
@@ -118,8 +117,8 @@ module.exports = [
         description:'Soy Flat white is an espresso drink with steamed soy milk.',
         img_url:'https://images.unsplash.com/photo-1502462041640-b3d7e50d0662?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80',
         calories:73,
-        taste:'mild',  
-        option:'soy-milk',
+        sort:'mild',  
+        preference:'soy-milk',
         votes:10
     },
     {
@@ -127,8 +126,8 @@ module.exports = [
         description:'only espresso shot',
         img_url:'https://images.unsplash.com/photo-1428550443830-190057dc8098?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80',
         calories:6,
-        taste: 'strong', 
-        option:'water',
+        sort: 'strong', 
+        preference:'water',
         votes:4
     },
     
@@ -137,8 +136,8 @@ module.exports = [
         description:'Caramel macchiato is comprised of a shot of espresso and steamed milk with vanilla syrup and caramel drizzle. ',
         img_url:'https://images.unsplash.com/photo-1592318951566-70f4518609a9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80',
         calories:229,
-        taste:'sweet',  
-        option:'semi-skimmed-milk',
+        sort:'sweet',  
+        preference:'semi-skimmed-milk',
         votes: 19
 
     }

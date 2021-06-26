@@ -1,23 +1,23 @@
 module.exports = [
     {
-        type:'semi-skimmed-milk',
+        milk_type:'semi-skimmed-milk',
         description:'It is a good source of protein and calcium and usually use for making differrnt kinds of coffee.'
     },
     {
-        type:'soy-milk',
+        milk_type:'soy-milk',
         description:'It is made of soy.'
     },
     {
-        type:'oat-milk',
+        milk_type:'oat-milk',
         description:'It is made of oat.'
     },
     {
-        type:'coconut-milk',
+        milk_type:'coconut-milk',
         description:'It is made of coconut.'
     },
     {
-        type:'water',
+        milk_type:'water',
         description:'pure water'
     }
     
-]
+];
