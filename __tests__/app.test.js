@@ -145,6 +145,89 @@ describe('GET /api/coffee', () => {
         .expect(404);
         expect(body.msg).toBe('non-existent choice!')
     });
-
-
 })
+
+describe('GET /api/coffee/:coffee_id', () => {
+    test('200: response with  an array of required coffee',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee/1')
+        .expect(200);
+        const requiredCoffee = body.coffee
+        expect(typeof requiredCoffee).toEqual('object');
+        expect(requiredCoffee).toEqual(
+            [{"calories": 180, 
+            "coffee_id": 1, 
+            "comment_count": "1", 
+            "description": "Latte is comprised of a shot of espresso and steamed milk ", 
+            "drink": "Latte", "img_url": "https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80", 
+            "preference": "semi-skimmed-milk", 
+            "sort": "mild", 
+            "votes": 10}]
+        )
+
+    });
+    test('400: responds with an error message when passed a invalid coffee_id ',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee/apple')
+        .expect(400);
+        expect(body.msg).toBe('bad request!!');
+    });
+    test('404: responds with an error message when passed a non-existent coffee_id',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee/1000')
+        .expect(404);
+        expect(body.msg).toBe('not found!!')
+    });
+    
+});
+
+describe('PATCH /api/coffee/:coffee_id', () => {
+    test('200: response with an updated coffee when {inc_votes: 10} requested',async()=>{
+        const updatedVote = {inc_votes: 10}
+        const {body} = await request(app)
+        .patch('/api/coffee/1')
+        .send(updatedVote)
+        .expect(200);
+        console.log(body.update)
+        expect(body.update).toHaveProperty("votes",20)
+    });
+    test('200: response with an updated coffee {inc_votes: -1} requested',async()=>{
+        const {body} = await request(app)
+        .patch('/api/coffee/2')
+        .send({inc_votes: -1})
+        .expect(200);
+        expect(body.update).toHaveProperty("votes",7)
+    });
+    test('200: responds with an updated coffee when there is some other property',async()=>{
+        const {body} = await request(app)
+        .patch('/api/coffee/3')
+        .send({inc_votes: 5, name: 'Park'})
+        .expect(200);
+        expect(body.update).toHaveProperty("votes",15)
+    });
+    test('404: responds with an error message when there is a valid but non-existent review_id',async()=>{
+        const {body} = await request(app)
+        .patch('/api/coffee/300')
+        .send({inc_votes: 10})
+        .expect(404);
+        expect(body.msg).toBe('not found!!')
+    });
+    
+    test('400: responds with an error message when there is invalid coffee_id',async()=>{
+        const {body} = await request(app)
+        .patch('/api/coffee/apple')
+        .send({inc_votes: 10})
+        .expect(400);
+
+       expect(body.msg).toBe('bad request!!')
+    });
+    test('400: responds with an error message when there is invalid "inc_votes',async()=>{
+        const {body} = await request(app)
+        .patch('/api/coffee/3')
+        .send({inc_votes: 'cat'})
+        .expect(400);
+        expect(body.msg).toBe('bad request!!')
+    });
+    
+
+});

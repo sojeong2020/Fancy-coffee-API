@@ -1,5 +1,4 @@
 const db = require('../db/connection');
-const { options } = require('../routes/tastes.router');
 
 exports.selectCoffee = async(sort_by = 'calories',order='asc', choice)=>{
 
@@ -56,4 +55,36 @@ exports.selectCoffee = async(sort_by = 'calories',order='asc', choice)=>{
     
 
     return result.rows
+}
+
+exports.selectCoffeeById = async(coffee_id)=>{
+    const result = await db.query(`
+    SELECT coffee.* , COUNT(comments.coffee_id) AS comment_count 
+    FROM coffee 
+    LEFT JOIN comments ON comments.coffee_id = coffee.coffee_id
+    WHERE coffee.coffee_id=$1
+    GROUP BY coffee.coffee_id;`,
+    [coffee_id])
+
+    if(result.rows.length === 0){
+        return Promise.reject({status:404, msg:'not found!!'})
+    }
+
+    return result.rows
+}
+
+exports.patchCoffee = async(coffee_id,inc_votes)=>{
+    const result = await db.query(`
+    UPDATE coffee
+    SET votes= votes + $2
+    WHERE coffee_id=$1
+    RETURNING * ;`,
+    [coffee_id, inc_votes]
+    )
+    if(result.rows.length === 0){
+        return Promise.reject({status: 404, msg: 'not found!!'})
+  
+       }       
+return result.rows[0]
+
 }
