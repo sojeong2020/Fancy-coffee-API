@@ -84,15 +84,67 @@ describe('GET /api/coffee', () => {
                 sort: expect.any(String),
                 preference: expect.any(String),
                 votes: expect.any(Number),
+                comment_count: expect.any(String)
                 }))
             }) 
     });
     test('200: response with coffee sorted by calories by default ',async()=>{
         const {body} = await request(app)
-        
         .get('/api/coffee?sort_by=calories')
         .expect(200)
         expect(body.coffee).toBeSortedBy('calories',{descending: false});
     });
+    test('200: response with coffee sorted by sort by query ',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee?sort_by=sort')
+        .expect(200)
+        expect(body.coffee).toBeSortedBy('sort',{descending: false});
+    });
+    test('200: response with coffee sorted by preference by query ',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee?sort_by=preference')
+        .expect(200)
+        expect(body.coffee).toBeSortedBy('preference',{descending: false});
+    });
+    test('200: response with coffee sorted by a sort_by and order by query',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee?sort_by=calories&order=desc')
+        .expect(200)
+        expect(body.coffee).toBeSortedBy('calories',{descending: true,})
+    });
+    test('200: response with coffee filtered by the sort value by query',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee?sort_by=calories&order=desc&choice=sweet')
+        .expect(200)
+        expect(body.coffee).toHaveLength(4)
+        expect(body.coffee).toBeSortedBy('calories',{descending: true,})
+    });
+    test('200: response with coffee filtered by the preference value by query',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee?sort_by=calories&order=desc&choice=soy-milk')
+        .expect(200)
+        //console.log(body.coffee)
+        expect(body.coffee).toHaveLength(3)
+        expect(body.coffee).toBeSortedBy('calories',{descending: true,})
+    });
+    test('400: response with error message when passed invalid `sort_by`', async() => {
+        const {body} = await request(app)
+        .get('/api/coffee?sort_by=apple')
+        .expect(400);
+        expect(body.msg).toBe("Bad request: Invalid sort_by!")
+    });
+    test('400: response with error message when passed invalid `order`', async() => {
+        const {body} = await request(app)
+        .get('/api/coffee?order=apple')
+        .expect(400);
+        expect(body.msg).toBe("Bad request: Invalid order!")
+    });
+    test('404: response with error message when passed non-existent `choice`', async() => {
+        const {body} = await request(app)
+        .get('/api/coffee?sort_by=calories&order=desc&choice=spicy')
+        .expect(404);
+        expect(body.msg).toBe('non-existent choice!')
+    });
+
 
 })
