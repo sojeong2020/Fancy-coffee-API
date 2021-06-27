@@ -48,11 +48,11 @@ exports.formatOptionsData = (optionsData) => {
 
 }  
 exports.lookUp = (coffeeRows) => {
-    console.log(coffeeRows)
+   // console.log(coffeeRows)
  coffeeObj={}
  coffeeRows.forEach((each)=>
      coffeeObj[each.drink] = each.coffee_id
  )
- console.log(coffeeObj)
+ //console.log(coffeeObj)
  return coffeeObj
 } 

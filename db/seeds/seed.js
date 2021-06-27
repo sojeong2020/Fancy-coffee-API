@@ -7,20 +7,20 @@ let coffeeLookUp={};
 
 
 const seed = async ()=>{
-    await db.query(`DROP TABLE IF EXISTS coffee, comments, options, tastes;`)
-    console.log('dropping tables')
+    await db.query(`DROP TABLE IF EXISTS tastes, options,  coffee, comments;`)
+    //console.log('dropping tables')
     await db.query(`
     CREATE TABLE options(
         milk_type VARCHAR(200) PRIMARY KEY,
         description VARCHAR(1000) NOT NULL
     );`);
-console.log('create options table');
+//console.log('create options table');
      await db.query(`
     CREATE TABLE tastes(
         type VARCHAR(200) PRIMARY KEY,
         description VARCHAR(1000) NOT NULL
     );`);
-    console.log('create tastes table');
+   // console.log('create tastes table');
 
    await db.query(`
     CREATE TABLE coffee(
@@ -33,7 +33,7 @@ console.log('create options table');
         preference VARCHAR(200),
         votes INT default 0
     );`);
-    console.log('create coffee table');
+   // console.log('create coffee table');
 
 
     await db.query(`
@@ -46,7 +46,7 @@ console.log('create options table');
         created_at TIMESTAMP DEFAULT NOW(),
         coffee_id INT REFERENCES coffee(coffee_id)
     );`);
-    console.log('create comments table');
+    //console.log('create comments table');
 
  
     //INSERT VALUES
