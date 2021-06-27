@@ -87,11 +87,12 @@ describe('GET /api/coffee', () => {
                 }))
             }) 
     });
-    xtest('200: response with review sorted by calories by default ',async()=>{
+    test('200: response with coffee sorted by calories by default ',async()=>{
         const {body} = await request(app)
-        .get('/api/reviews?sort_by=calories')
+        
+        .get('/api/coffee?sort_by=calories')
         .expect(200)
-        expect(body.reviews).toBeSortedBy('calories',{descending: false});
+        expect(body.coffee).toBeSortedBy('calories',{descending: false});
     });
 
 })
