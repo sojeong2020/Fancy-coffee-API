@@ -228,6 +228,67 @@ describe('PATCH /api/coffee/:coffee_id', () => {
         .expect(400);
         expect(body.msg).toBe('bad request!!')
     });
-    
+});
 
+describe('GET api/coffee/:coffee_id/comments', () => {
+    test('response with an array of comments', async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee/1/comments')
+        .expect(200)
+      expect(body.comments).toHaveLength(1);
+      expect(Array.isArray(body.comments)).toBe(true);
+  
+      body.comments.forEach((comment)=>{
+          expect(comment).toEqual(
+              expect.objectContaining({
+              comment_id: expect.any(Number),
+              votes: expect.any(Number),
+              drink_name: expect.any(String),
+              created_at: expect.any(String),
+              author: expect.any(String),
+              body: expect.any(String)
+             })
+             )
+          })
+      });
+    test('200: responds with a message when coffee has no comments',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee/11/comments')
+        .expect(200);
+        console.log(body)
+        expect(body.comments).toEqual([])
+    });
+    test('400: responds with a message when passed a invalid coffee_id',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee/banana/comments')
+        .expect(400);
+        expect(body.msg).toBe('bad request!!')
+    });
+    test('404: responds with an message when a passed a non-existent coffee_id',async()=>{
+        const {body} = await request(app)
+        .get('/api/coffee/1000/comments')
+        .expect(404);
+        expect(body.msg).toBe('coffee not found!')
+    });  
+});
+
+describe('POST /api/coffee/:coffee_id/comments ', () => {
+    test('201: response with posted comment',async()=>{
+        const {body} = await request(app)
+        .post('/api/coffee/1/comments')
+        .send({author:'Craig', body:'my new comment!', drink_name: 'Latte'})
+        .expect(201);
+        expect(body.postedComment).toEqual(
+            expect.objectContaining({
+                comment_id: expect.any(Number),
+                author: expect.any(String),
+                body: expect.any(String),
+                comment_id:expect.any(Number),
+                created_at: expect.any(String),
+                votes: expect.any(Number),
+                drink_name: expect.any(String),
+                coffee_id: expect.any(Number)
+            })
+        )
+    });
 });

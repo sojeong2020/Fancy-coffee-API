@@ -1,5 +1,13 @@
 const db = require('../db/connection');
 
+const checkCoffeeExist = async(review_id)=>{
+    const coffeeExistResult=await db.query(`SELECT * FROM coffee 
+    WHERE coffee_id=$1;`, [review_id])
+     if(coffeeExistResult.rows.length === 0){
+            return Promise.reject({status: 404, msg: 'coffee not found!'});
+    }
+}
+
 exports.selectCoffee = async(sort_by = 'calories',order='asc', choice)=>{
 
     const validColumns = [
@@ -87,4 +95,28 @@ exports.patchCoffee = async(coffee_id,inc_votes)=>{
        }       
 return result.rows[0]
 
+}
+
+exports.selectCommentsById = async(coffee_id)=>{
+    const result = await db.query(`
+    SELECT * FROM comments WHERE comments.coffee_id=$1;`,
+    [coffee_id])
+
+    if(result.rows.length === 0){
+        await checkCoffeeExist(coffee_id)
+        
+    }
+
+    return result.rows
+}
+
+exports.postCommentById = async(coffee_id,author,body,drink_name)=>{
+    await checkCoffeeExist(coffee_id)
+
+    const result = await db.query(`
+    INSERT INTO comments (coffee_id,author,body,drink_name)
+    VALUES ($1,$2,$3,$4) RETURNING *;`,
+    [coffee_id,author,body])
+    console.log(result.rows[0])
+    return result.rows[0]
 }

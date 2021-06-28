@@ -39,7 +39,7 @@ const seed = async ()=>{
     await db.query(`
     CREATE TABLE comments(
         comment_id SERIAL PRIMARY KEY,
-        author VARCHAR(200) NOT NULL,
+        author VARCHAR(200)NOT NULL,
         body VARCHAR(5000) NOT NULL,
         votes INT default 0,
         drink_name VARCHAR(100),
