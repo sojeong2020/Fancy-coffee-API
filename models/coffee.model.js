@@ -116,7 +116,7 @@ exports.postCommentById = async(coffee_id,author,body,drink_name)=>{
     const result = await db.query(`
     INSERT INTO comments (coffee_id,author,body,drink_name)
     VALUES ($1,$2,$3,$4) RETURNING *;`,
-    [coffee_id,author,body])
+    [coffee_id,author,body,drink_name])
     console.log(result.rows[0])
     return result.rows[0]
 }
