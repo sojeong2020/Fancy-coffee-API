@@ -1,4 +1,4 @@
-# FANCY COFFEE API :coffee:
+# FANCY COFFEE API   :coffee:
 
 
 ## Background
@@ -33,15 +33,13 @@ I wanted to practice PSQL so database is PSQL and I interacted with it using nod
 <li> GET /api/coffee?sort_by=calories&order=desc&choice=sweet</li>
 <li> GET /api/coffee?sort_by=calories&order=desc&choice=soy-milk</li>
 <li> GET /api/coffee/:coffee_id</li>
+<li> GET api/coffee/:coffee_id/comments</li>
+<li> POST /api/coffee/:coffee_id/comments</li>
+<li> PATCH /api/coffee/:coffee_id</li>
 
 <li> GET /api/tastes</li>
 <li> GET /api/options</li>
 <li> GET /api/comments</li>
-
-<li> </li>
-<li> </li>
-
-
 </ul>
 
 ## Getting started
