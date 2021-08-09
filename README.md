@@ -24,6 +24,9 @@ I wanted to practice PSQL so database is PSQL and I interacted with it using nod
 
 
 ## Endpoints
+
+![GitHub Logo](/images/coffeeAPI1.jpg)
+Format: ![Alt Text](url)
 <ul>
 <li> GET /api/coffee - get all coffee </li>
 <li> GET /api/coffee?sort_by=calories</li>
