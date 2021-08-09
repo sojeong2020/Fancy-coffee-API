@@ -3,8 +3,8 @@
 
 ## Background
 
-I built this REST API because I love coffee.:heart: 
-This API provides data of many difference types of coffee and so on.
+### I built this REST API because I love coffee.:heart: 
+### This API provides data of many difference types of coffee and so on.
 
 I wanted to practice PSQL so database is PSQL and I interacted with it using node-postgres.
 
