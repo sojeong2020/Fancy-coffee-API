@@ -9,12 +9,18 @@ This API provides data of many difference types of coffee and so on.
 I wanted to practice PSQL so database is PSQL and I interacted with it using node-postgres.
 
 ## Built With
-
-<p><a href="https://nodejs.org/en/">Node.js</a></p>
+<ul>
+<li><a href="https://nodejs.org/en/">Node.js</a></li>
+<li><a href="https://expressjs.com/">Express.js</a></li>
+<li><a href="https://www.postgresql.org/docs/">Postgres</a></li>
+<li><a href="https://www.npmjs.com/package/pg-format">pg-format</a></li>
+<li><a href="https://jestjs.io/docs/getting-started">jest</a></li>
+</ul>
+<!-- <p><a href="https://nodejs.org/en/">Node.js</a></p>
 <p><a href="https://expressjs.com/">Express.js</a></p>
 <p><a href="https://www.postgresql.org/docs/">Postgres</a></p> 
 <p><a href="https://www.npmjs.com/package/pg-format">pg-format</a></p>
-<p><a href="https://jestjs.io/docs/getting-started">jest</a></p>
+<p><a href="https://jestjs.io/docs/getting-started">jest</a></p> -->
 
 
 ## Endpoints
@@ -27,9 +33,11 @@ I wanted to practice PSQL so database is PSQL and I interacted with it using nod
 <li> GET /api/coffee?sort_by=calories&order=desc&choice=sweet</li>
 <li> GET /api/coffee?sort_by=calories&order=desc&choice=soy-milk</li>
 <li> GET /api/coffee/:coffee_id</li>
-<li> </li>
-<li> </li>
-<li> </li>
+
+<li> GET /api/tastes</li>
+<li> GET /api/options</li>
+<li> GET /api/comments</li>
+
 <li> </li>
 <li> </li>
 

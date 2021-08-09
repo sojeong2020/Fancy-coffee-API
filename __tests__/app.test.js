@@ -64,6 +64,32 @@ describe('GET /api/options', () => {
     });
 });
 
+describe('GET /api/comments', () => {
+    test('200: response with an array of comments',async()=>{
+    const result = await request(app)
+    .get('/api/comments')
+    .expect(200);
+    
+    const {comments} = result.body
+    expect(comments).toHaveLength(9);
+    expect(Array.isArray(comments)).toBe(true);
+
+    options.forEach((comment)=>{
+        expect(comment).toEqual(
+            expect.objectContaining({
+                comment_id: expect.any(Number),
+                author:expect.any(String),
+                body: expect.any(String),
+                votes: expect.any(Number),
+                drink_name: expect.any(String),
+                created_at: expect.any(String),
+                coffee_id: expect.any(Number)
+        }))
+    })
+    });
+});
+
+
 describe('GET /api/coffee', () => {
     test('200: response with an arrary of coffee', async() => {
         const {body} = await request(app)
