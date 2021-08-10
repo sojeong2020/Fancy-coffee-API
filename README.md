@@ -29,8 +29,8 @@
 
 <ul>
 <li> GET /api/coffee - get all coffee </li>
-  ```
-  {
+ ```
+ <p> {
   "coffee": [
     {
       "coffee_id": 1,
@@ -44,8 +44,8 @@
       "comment_count": "2"
     }
   ]
-}
-  ```
+   }</p>
+```
 <li> GET /api/coffee?sort_by=calories</li>
 <li> GET /api/coffee?sort_by=sort</li>
 <li> GET /api/coffee?sort_by=calories&order=desc</li>
