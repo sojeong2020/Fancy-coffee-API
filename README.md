@@ -10,43 +10,17 @@
 
 ## Built With
 
-- [Express](https://expressjs.com/) and [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)  
+- [Node.js](https://nodejs.org/en/)
 - [Postgresql](https://www.postgresql.org/docs/)
 - [pg-format](https://www.npmjs.com/package/pg-format)
 - [Jest](https://jestjs.io/docs/getting-started)
 
 ## Endpoints
 
-![GitHub Logo](/images/coffeeAPI1.jpg)
-
-
-- GET /api/coffee - get all coffee 
- ```json
- {
-  "coffee": [
-    {
-      "coffee_id": 14,
-      "drink": "Espresso",
-      "description": "only espresso shot",
-      "img_url": "https://images.unsplash.com/photo-1428550443830-190057dc8098?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80",
-      "calories": 6,
-      "sort": "strong",
-      "preference": "water",
-      "votes": 4,
-      "comment_count": "0"
-    },
-    {
-      "coffee_id": 8,
-      "drink": "Americano",
-      "description": "Americano is a shot of espresso diluted in hot water",
-      "img_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
-      "calories": 16,
-      "sort": "strong",
-      "preference": "water",
-      "votes": 10,
-      "comment_count": "0"
-    },
-```
+- GET /api/coffee - get all coffee
+![GitHub Logo](/images/coffeeAPI3.jpg)
+ 
 - GET /api/coffee?sort_by=calories
 - GET /api/coffee?sort_by=sort
 - GET /api/coffee?sort_by=calories&order=desc
