@@ -19,7 +19,7 @@
 ## Endpoints
 
 - GET /api/coffee - get all coffee
-![GitHub Logo](/images/coffeeAPI3.jpg)
+![GitHub Logo](/images/coffeeAPIcoffee.jpg)
  
 - GET /api/coffee?sort_by=calories
 - GET /api/coffee?sort_by=sort
@@ -29,35 +29,26 @@
 - GET /api/coffee?sort_by=calories&order=desc&choice=soy-milk
 - GET /api/coffee/:coffee_id
 - GET api/coffee/:coffee_id/comments
+![GitHub Logo](/images/coffeeAPI1.jpg)
+
+- POST /api/coffee/:coffee_id/comments
 ```json
 {
-  "comments": [
-    {
-      "comment_id": 1,
-      "author": "Craig",
-      "body": "I love it!",
-      "votes": 2,
-      "drink_name": "Latte",
-      "created_at": "2021-01-18T10:09:05.410Z",
-      "coffee_id": 1
-    },
-    {
-      "comment_id": 5,
-      "author": "Craig B",
-      "body": "I love it so much!!",
-      "votes": 0,
-      "drink_name": "Latte",
-      "created_at": "2021-08-09T17:28:35.798Z",
-      "coffee_id": 1
-    }
-  ]
+    "author":"Len",
+    "body":"This is the one!.",
+    "drink_name":"Coconut Mocha"
+}
+```
+- PATCH /api/coffee/:coffee_id
+```json
+{
+    "inc_vote":5
 }
 ```
 
-- POST /api/coffee/:coffee_id/comments
-- PATCH /api/coffee/:coffee_id
-
 - GET /api/tastes
+![GitHub Logo](/images/coffeeAPItastes.jpg)
+
 ```json
 {
   "tastes": [
@@ -77,6 +68,8 @@
 }
 ```
 - GET /api/options
+![GitHub Logo](/images/coffeeAPIoptions.jpg)
+
  ```json
 {
   "options": [
@@ -104,6 +97,8 @@
 }
 ```
 - GET /api/comments
+![GitHub Logo](/images/coffeeAPIcomments.jpg)
+
 
 ## Getting started
 
