@@ -16,11 +16,6 @@
 <li><a href="https://www.npmjs.com/package/pg-format">pg-format</a></li>
 <li><a href="https://jestjs.io/docs/getting-started">jest</a></li>
 </ul>
-<!-- <p><a href="https://nodejs.org/en/">Node.js</a></p>
-<p><a href="https://expressjs.com/">Express.js</a></p>
-<p><a href="https://www.postgresql.org/docs/">Postgres</a></p> 
-<p><a href="https://www.npmjs.com/package/pg-format">pg-format</a></p>
-<p><a href="https://jestjs.io/docs/getting-started">jest</a></p> -->
 
 
 ## Endpoints
@@ -29,8 +24,8 @@
 
 <ul>
 <li> GET /api/coffee - get all coffee </li>
- ```
- 
+ ```json
+ {
   "coffee": [
     {
       "coffee_id": 1,
@@ -44,7 +39,7 @@
       "comment_count": "2"
     }
   ]
-   
+   }
 ```
 <li> GET /api/coffee?sort_by=calories</li>
 <li> GET /api/coffee?sort_by=sort</li>
