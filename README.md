@@ -9,14 +9,11 @@
 ### I wanted to practice PSQL so database is PSQL and I interacted with it using node-postgres.
 
 ## Built With
-<ul>
-<li><a href="https://nodejs.org/en/">Node.js</a></li>
-<li><a href="https://expressjs.com/">Express.js</a></li>
-<li><a href="https://www.postgresql.org/docs/">Postgres</a></li>
-<li><a href="https://www.npmjs.com/package/pg-format">pg-format</a></li>
-<li><a href="https://jestjs.io/docs/getting-started">jest</a></li>
-</ul>
 
+- [Express](https://expressjs.com/) and [Node.js](https://nodejs.org/en/)
+- [Postgresql](https://www.postgresql.org/docs/)
+- [pg-format](https://www.npmjs.com/package/pg-format)
+- [Jest](https://jestjs.io/docs/getting-started)
 
 ## Endpoints
 
@@ -28,18 +25,27 @@
  {
   "coffee": [
     {
-      "coffee_id": 1,
-      "drink": "Latte",
-      "description": "Latte is comprised of a shot of espresso and steamed milk ",
-      "img_url": "https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80",
-      "calories": 180,
-      "sort": "mild",
-      "preference": "semi-skimmed-milk",
-      "votes": 15,
-      "comment_count": "2"
-    }
-  ]
-   }
+      "coffee_id": 14,
+      "drink": "Espresso",
+      "description": "only espresso shot",
+      "img_url": "https://images.unsplash.com/photo-1428550443830-190057dc8098?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80",
+      "calories": 6,
+      "sort": "strong",
+      "preference": "water",
+      "votes": 4,
+      "comment_count": "0"
+    },
+    {
+      "coffee_id": 8,
+      "drink": "Americano",
+      "description": "Americano is a shot of espresso diluted in hot water",
+      "img_url": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80",
+      "calories": 16,
+      "sort": "strong",
+      "preference": "water",
+      "votes": 10,
+      "comment_count": "0"
+    },
 ```
 - GET /api/coffee?sort_by=calories
 - GET /api/coffee?sort_by=sort
@@ -49,11 +55,80 @@
 - GET /api/coffee?sort_by=calories&order=desc&choice=soy-milk
 - GET /api/coffee/:coffee_id
 - GET api/coffee/:coffee_id/comments
+```json
+{
+  "comments": [
+    {
+      "comment_id": 1,
+      "author": "Craig",
+      "body": "I love it!",
+      "votes": 2,
+      "drink_name": "Latte",
+      "created_at": "2021-01-18T10:09:05.410Z",
+      "coffee_id": 1
+    },
+    {
+      "comment_id": 5,
+      "author": "Craig B",
+      "body": "I love it so much!!",
+      "votes": 0,
+      "drink_name": "Latte",
+      "created_at": "2021-08-09T17:28:35.798Z",
+      "coffee_id": 1
+    }
+  ]
+}
+```
+
 - POST /api/coffee/:coffee_id/comments
 - PATCH /api/coffee/:coffee_id
 
 - GET /api/tastes
+```json
+{
+  "tastes": [
+    {
+      "type": "mild",
+      "description": "Beginner-friendly coffee as it comes with a lot of milk that neutralizes the bitter taste."
+    },
+    {
+      "type": "strong",
+      "description": "It contains a lot of Caffeine."
+    },
+    {
+      "type": "sweet",
+      "description": "It contains sweet syrups and is high caloric."
+    }
+  ]
+}
+```
 - GET /api/options
+- ```json
+{
+  "options": [
+    {
+      "milk_type": "semi-skimmed-milk",
+      "description": "It is a good source of protein and calcium and usually use for making differrnt kinds of coffee."
+    },
+    {
+      "milk_type": "soy-milk",
+      "description": "It is made of soy."
+    },
+    {
+      "milk_type": "oat-milk",
+      "description": "It is made of oat."
+    },
+    {
+      "milk_type": "coconut-milk",
+      "description": "It is made of coconut."
+    },
+    {
+      "milk_type": "water",
+      "description": "pure water"
+    }
+  ]
+}
+```
 - GET /api/comments
 
 
