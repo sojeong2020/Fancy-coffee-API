@@ -34,9 +34,9 @@
 - POST /api/coffee/:coffee_id/comments
 ```json
 {
-    "author":"Len",
-    "body":"This is the one!.",
-    "drink_name":"Coconut Mocha"
+    "author":"Liam",
+    "body":"I Like this one!.",
+    "drink_name":"Mocha"
 }
 ```
 - PATCH /api/coffee/:coffee_id
@@ -49,53 +49,11 @@
 - GET /api/tastes
 ![GitHub Logo](/images/coffeeAPItastes.jpg)
 
-```json
-{
-  "tastes": [
-    {
-      "type": "mild",
-      "description": "Beginner-friendly coffee as it comes with a lot of milk that neutralizes the bitter taste."
-    },
-    {
-      "type": "strong",
-      "description": "It contains a lot of Caffeine."
-    },
-    {
-      "type": "sweet",
-      "description": "It contains sweet syrups and is high caloric."
-    }
-  ]
-}
-```
+
 - GET /api/options
 ![GitHub Logo](/images/coffeeAPIoptions.jpg)
 
- ```json
-{
-  "options": [
-    {
-      "milk_type": "semi-skimmed-milk",
-      "description": "It is a good source of protein and calcium and usually use for making differrnt kinds of coffee."
-    },
-    {
-      "milk_type": "soy-milk",
-      "description": "It is made of soy."
-    },
-    {
-      "milk_type": "oat-milk",
-      "description": "It is made of oat."
-    },
-    {
-      "milk_type": "coconut-milk",
-      "description": "It is made of coconut."
-    },
-    {
-      "milk_type": "water",
-      "description": "pure water"
-    }
-  ]
-}
-```
+
 - GET /api/comments
 ![GitHub Logo](/images/coffeeAPIcomments.jpg)
 
