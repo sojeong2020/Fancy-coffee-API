@@ -22,8 +22,8 @@
 
 ![GitHub Logo](/images/coffeeAPI1.jpg)
 
-<ul>
-<li> GET /api/coffee - get all coffee </li>
+
+- GET /api/coffee - get all coffee 
  ```json
  {
   "coffee": [
@@ -41,21 +41,21 @@
   ]
    }
 ```
-<li> GET /api/coffee?sort_by=calories</li>
-<li> GET /api/coffee?sort_by=sort</li>
-<li> GET /api/coffee?sort_by=calories&order=desc</li>
-<li> GET /api/coffee?sort_by=preference</li>
-<li> GET /api/coffee?sort_by=calories&order=desc&choice=sweet</li>
-<li> GET /api/coffee?sort_by=calories&order=desc&choice=soy-milk</li>
-<li> GET /api/coffee/:coffee_id</li>
-<li> GET api/coffee/:coffee_id/comments</li>
-<li> POST /api/coffee/:coffee_id/comments</li>
-<li> PATCH /api/coffee/:coffee_id</li>
+- GET /api/coffee?sort_by=calories
+- GET /api/coffee?sort_by=sort
+- GET /api/coffee?sort_by=calories&order=desc
+- GET /api/coffee?sort_by=preference
+- GET /api/coffee?sort_by=calories&order=desc&choice=sweet
+- GET /api/coffee?sort_by=calories&order=desc&choice=soy-milk
+- GET /api/coffee/:coffee_id
+- GET api/coffee/:coffee_id/comments
+- POST /api/coffee/:coffee_id/comments
+- PATCH /api/coffee/:coffee_id
 
-<li> GET /api/tastes</li>
-<li> GET /api/options</li>
-<li> GET /api/comments</li>
-</ul>
+- GET /api/tastes
+- GET /api/options
+- GET /api/comments
+
 
 ## Getting started
 
