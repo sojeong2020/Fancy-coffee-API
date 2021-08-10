@@ -1,28 +1,26 @@
-# FANCY COFFEE API   :coffee:
-
+# FANCY COFFEE API   
+### Open source REST API :coffee:
 
 ## Background
 
-I built this REST API because I love coffee.:heart: 
-This API provides data of many difference types of coffee and so on.
+### I built this project because I love coffee.:heart: 
+### This API provides data of many difference types of coffee and so on.
 
-I wanted to practice PSQL so database is PSQL and I interacted with it using node-postgres.
+### I wanted to practice PSQL so database is PSQL and I interacted with it using node-postgres.
 
 ## Built With
+
 - [Express](https://expressjs.com/)  
 - [Node.js](https://nodejs.org/en/)
 - [Postgresql](https://www.postgresql.org/docs/)
 - [pg-format](https://www.npmjs.com/package/pg-format)
 - [Jest](https://jestjs.io/docs/getting-started)
 
-
-
 ## Endpoints
-
 
 - GET /api/coffee - get all coffee
 ![GitHub Logo](/images/coffeeAPI3.jpg)
-
+ 
 - GET /api/coffee?sort_by=calories
 - GET /api/coffee?sort_by=sort
 - GET /api/coffee?sort_by=calories&order=desc
