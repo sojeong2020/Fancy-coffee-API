@@ -77,7 +77,7 @@
 }
 ```
 - GET /api/options
-- ```json
+ ```json
 {
   "options": [
     {
