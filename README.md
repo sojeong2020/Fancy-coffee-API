@@ -4,9 +4,9 @@
 ## Background
 
 ### I built this project because I love coffee.:heart: 
-### This API provides data of many difference types of coffee and so on.
+### This API provides data of many different types coffee and so on.
 
-### I wanted to practice PSQL so database is PSQL and I interacted with it using node-postgres.
+### I wanted to practice PSQL and interacted with it using node-postgres.
 
 ## Built With
 
@@ -74,5 +74,9 @@ npm start
 Open http://localhost:9090 to view it in the <a href="https://insomnia.rest/">Insomnia</a>.
 
 Any questions please contact macpark09@gmail.com
+ 
+## Contributor
+
+### Sojeong Park
 
 
