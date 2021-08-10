@@ -29,6 +29,23 @@
 
 <ul>
 <li> GET /api/coffee - get all coffee </li>
+  ```
+  {
+  "coffee": [
+    {
+      "coffee_id": 1,
+      "drink": "Latte",
+      "description": "Latte is comprised of a shot of espresso and steamed milk ",
+      "img_url": "https://images.unsplash.com/photo-1529892485617-25f63cd7b1e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80",
+      "calories": 180,
+      "sort": "mild",
+      "preference": "semi-skimmed-milk",
+      "votes": 15,
+      "comment_count": "2"
+    }
+  ]
+}
+  ```
 <li> GET /api/coffee?sort_by=calories</li>
 <li> GET /api/coffee?sort_by=sort</li>
 <li> GET /api/coffee?sort_by=calories&order=desc</li>
